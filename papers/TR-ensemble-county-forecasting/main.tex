@@ -1,0 +1,638 @@
+%%
+%% This is file `sample-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `authordraft')
+%% 
+%
+\documentclass[sigconf]{acmart}
+%% NOTE that a single column version may be required for 
+%% submission and peer review. This can be done by changing
+%% the \doucmentclass[...]{acmart} in this template to 
+%% \documentclass[manuscript,screen,review]{acmart}
+%% 
+%% To ensure 100% compatibility, please check the white list of
+%% approved LaTeX packages to be used with the Master Article Template at
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
+%% before creating your document. The white list page provides 
+%% information on how to submit additional LaTeX packages for 
+%% review and adoption.
+%% Fonts used in the template cannot be substituted; margin 
+%% adjustments are not allowed.
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\usepackage{graphicx}
+
+\usepackage{subfigure}
+\usepackage{appendix}
+\usepackage{times}
+\renewcommand*\ttdefault{txtt}
+\usepackage{soul}
+\usepackage{url}
+% \usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\urlstyle{same}
+
+% \usepackage{amssymb}
+\usepackage{bbm}
+% \usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{algorithmic}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+% \SetKwComment{Comment}{$\triangleright$\ }{}
+
+\newcommand{\hub}{\emph{The Hub}}
+\newcommand{\ar}{AR}
+\newcommand{\sar}{AR\_spatial}
+\newcommand\comments[1]{\textcolor{red}{#1}}
+
+\setcopyright{acmcopyright}
+% \copyrightyear{2018}
+% \acmYear{2018}
+% \acmDOI{10.1145/1122445.1122456}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[Woodstock '18]{Woodstock '18: ACM Symposium on Neural
+%   Gaze Detection}{June 03--05, 2018}{Woodstock, NY}
+% \acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%   June 03--05, 2018, Woodstock, NY}
+% \acmPrice{15.00}
+% \acmISBN{978-1-4503-XXXX-X/18/06}
+\BeforeBeginEnvironment{appendices}{\clearpage}
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{All Models Are Useful: Bayesian Ensembling for Robust High Resolution COVID-19 Forecasting}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Aniruddha Adiga, Lijing Wang, Benjamin Hurt, Akhil Peddireddy, Przemyslaw Porebski, \\ Srinivasan Venkatramanan, Bryan Lewis, Madhav Marathe}
+% \authornote{Both authors contributed equally to this research.}
+% \email{aniruddha@virgina.edu}
+% \orcid{1234-5678-9012}
+% \author{Lijing Wang}
+% \authornotemark[1]
+% \email{webmaster@marysville-ohio.com}
+% \affiliation{%
+%   \institution{Institute for Clarity in Documentation}
+%   \streetaddress{P.O. Box 1212}
+%   \city{Dublin}
+%   \state{Ohio}
+%   \country{USA}
+%   \postcode{43017-6221}
+% }
+
+% \author{Benjamin Hurt}
+% \affiliation{%
+%   \institution{The Th{\o}rv{\"a}ld Group}
+%   \streetaddress{1 Th{\o}rv{\"a}ld Circle}
+%   \city{Hekla}
+%   \country{Iceland}}
+% \email{larst@affiliation.org}
+
+% \author{Valerie B\'eranger}
+% \affiliation{%
+%   \institution{Inria Paris-Rocquencourt}
+%   \city{Rocquencourt}
+%   \country{France}
+% }
+
+% \author{Akhil Sai Peddireddy}
+% \affiliation{%
+%  \institution{Rajiv Gandhi University}
+%  \streetaddress{Rono-Hills}
+%  \city{Doimukh}
+%  \state{Arunachal Pradesh}
+%  \country{India}}
+
+% \author{Przemyslaw Porebski}
+% \affiliation{%
+%   \institution{Tsinghua University}
+%   \streetaddress{30 Shuangqing Rd}
+%   \city{Haidian Qu}
+%   \state{Beijing Shi}
+%   \country{China}}
+
+% \author{Srinivasan Venkatramanan}
+% \affiliation{%
+%   \institution{Palmer Research Laboratories}
+%   \streetaddress{8600 Datapoint Drive}
+%   \city{San Antonio}
+%   \state{Texas}
+%   \country{USA}
+%   \postcode{78229}}
+% \email{cpalmer@prl.com}
+
+% \author{Bryan Lewis}
+% \affiliation{%
+%   \institution{The Th{\o}rv{\"a}ld Group}
+%   \streetaddress{1 Th{\o}rv{\"a}ld Circle}
+%   \city{Hekla}
+%   \country{Iceland}}
+% \email{jsmith@affiliation.org}
+
+% \author{Madhav Marathe}
+\affiliation{%
+  \institution{University of Virginia}
+  \city{Charlottesville}
+  \country{USA}}
+\email{aniruddha@virginia.edu, marathe@virginia.edu}
+
+% %%
+% %% By default, the full list of authors will be used in the page
+% %% headers. Often, this list is too long, and will overlap
+% %% other information printed in the page headers. This command allows
+% %% the author to define a more concise list
+% %% of authors' names for this purpose.
+% \renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+
+\begin{abstract}
+Timely, high-resolution forecasts of infectious disease incidence are useful for policy makers in deciding intervention measures and estimating healthcare resource burden. In this paper, we consider the task of forecasting COVID-19 confirmed cases at the county level for the United States. Although multiple methods have been explored for this task, their performance has varied across space and time due to noisy data and the inherent dynamic nature of the pandemic. We present a forecasting pipeline which incorporates probabilistic forecasts from multiple statistical, machine learning and mechanistic methods through a Bayesian ensembling scheme, and has been operational for nearly 6 months serving local, state and federal policymakers in the United States. While showing that the Bayesian ensemble is at least as good as the individual methods, we also show that each individual method contributes significantly for different spatial regions and time points. We compare our model's performance with other similar models being integrated into CDC-initiated COVID-19 Forecast Hub, and show better performance at longer forecast horizons. Finally, we also describe how such forecasts are used to increase lead time for training mechanistic scenario projections. Our work demonstrates that such a real-time high resolution forecasting pipeline can be developed by integrating multiple methods within a performance-based ensemble to support pandemic response. 
+
+% However, county-level data is noisy and subject to significant variability thus making forecasting a hard problem. Several classes of models such as statistical, machine learning, and mechanistic models have been explored to tackle the problem. But no model on its own has consistently shown superior performance over others. We develop a forecasting pipeline that consists of multiple data-driven methods producing independent forecasts that get ensembled to produce short-term weekly probabilistic forecasts across all the US counties. Comparing the average performances, the BMA ensemble forecasts are as good as the ones produced by the best performing individual method. In addition, we observe that each model is as important as the others for the overall performance of the system. Our framework has been deployed to produce real-time forecasts for the CDC-initiated COVID-19 ForecastHub (\hub{}). We compare our model with other competing models at \hub{} using the interval score. Comparisons indicate that the BMA ensemble provides the best forecast for a significant number of counties across multiple forecast weeks and ranks among the top-performing models. The real-time forecasting pipeline shows that simple, reliable time series models, when suitably combined using a performance-based ensemble, can yield forecasts comparable to other more complex models.   
+
+
+
+% Specifically, our system consists of autoregressive models, Kalman filtering techniques, long short-term memory networks and causal mechanistic models whose forecasts are ensembled using Bayesian model averaging (BMA). Evaluation of BMA and its constituent models indicate that the ensemble model is robust and its average performance across forecast weeks and counties is comparable to the   
+
+
+
+% The COVID-19 pandemic has resulted in a large number of fatalities and caused a significant disruption to the world population. One attempt to understand the spread of the disease involves accurate modeling and forecasting of COVID-19 case data. A plethora of methods have been proposed and but they have mostly focused on forecasting at the national and the state levels. In the US, county-level forecasting is of particularly high interest to policy makers as it enables a better distribution of limited healthcare resources. However, county-level data is considerably noisy when compared to state- or national-level data making reliable county-level forecasts more challenging. The existing forecasting methods can be broadly categorized into statistical, deep learning, and mechanistic models and it is observed that no single approach is superior. 
+% %  In this paper, we propose a multi-method approach which employs statistical, deep learning and mechanistic models and suitably weight their forecasts using the Bayesian model averaging. In this paper, we present an ensemble model that combines forecasts from autoregressive models, LSTM networks, Kalman filters, and SEIR models.  Specifically, we employ Bayesian Model Averaging (BMA) of forecasts to obtain probabilistic forecasts. 
+%  In this paper, we present a multi-method ensemble approach that has been producing quality forecasts for the CDC-initiated COVID-19 ForecastHub (\hub) for over six months. The pipeline employs autoregressive models, LSTM networks, Kalman filters, and SEIR models, and suitably weights their forecasts using Bayesian Model Averaging (BMA), a performance-based averaging method that accounts for the uncertainty in individual model forecasts during weighting. Comparing the average performances, the BMA ensemble forecasts are as good as the ones produced by the best performing individual method. The BMA's performance is relatively robust across forecast weeks despite variability in the observed performance of the individual methods. The distribution of BMA weights indicates that no single method dominates any specific region or forecast period. Further, ablation analysis shows that the each model is equally important. The BMA ensemble is one of the few county-level forecasting models for the \hub$--$ producing forecasts every week since August 2020 (over six months). The model has been deployed during particularly challenging times when the pandemic has been highly volatile. We compare our model with other competing models at \hub using the interval score. Comparisons indicate that the BMA ensemble provides the best forecast for a significant number of counties across the forecast weeks and ranks among the top-performing models. The work shows that simple, reliable time series models, when suitably combined using a performance-based ensemble, can yield forecasts comparable to other more complex models. 
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+% \begin{CCSXML}
+% <ccs2012>
+%  <concept>
+%   <concept_id>10010520.10010553.10010562</concept_id>
+%   <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%   <concept_significance>500</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010575.10010755</concept_id>
+%   <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%   <concept_significance>300</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010553.10010554</concept_id>
+%   <concept_desc>Computer systems organization~Robotics</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10003033.10003083.10003095</concept_id>
+%   <concept_desc>Networks~Network reliability</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+% </ccs2012>
+% \end{CCSXML}
+
+% \ccsdesc[500]{Computer systems organization~Embedded systems}
+% \ccsdesc[300]{Computer systems organization~Redundancy}
+% \ccsdesc{Computer systems organization~Robotics}
+% \ccsdesc[100]{Networks~Network reliability}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Disease forecasting, COVID-19, Bayesian model averaging, ensemble}
+
+
+\maketitle
+
+\section{Introduction}
+COVID-19 pandemic has been the greatest public health challenge facing humanity in over a century with more than 100 million confirmed cases worldwide, leading to nearly 2.3 million recorded deaths. United States has been the most affected country with approximately 25\% and 20\% of the reported cases and deaths respectively. While early response was marred by lack of adequate testing and medical resources, subsequent surges can be attributed to uncoordinated response across spatial scales. Although multiple crowd-sourced\footnote{\url{https://covidtracking.com/}} and academic\footnote{\url{https://nssac.bii.virginia.edu/covid-19/dashboard/}} efforts led to databases on high resolution disease surveillance, actionable forecasts for early indicators were difficult to integrate into policy response. 
+
+For instance, in April 2020, the Centers for Disease Control and Prevention (CDC) in collaboration with academic partners initiated the COVID-19 Forecast Hub (hereon referred to as \hub{}), a consortium of modeling teams to coordinate the forecasting efforts\footnote{\url{https://viz.covid19forecasthub.org/}}. Due to lack of reliable data on other outcomes and at higher resolutions, this early effort was limited to probabilistic forecasts of deaths at the national and state level. Multiple classes of statistical and mechanistic models were employed by individual groups\cite{ray2020ensemble} and the forecasts were combined through a naive equally-weighted ensemble of eligible methods. Unlike seasonal influenza forecasting where statistical methods have been shown to be better overall\cite{reich2019collaborative}, due to lack of training data and the need for integrating various disease parameter estimates, it was noted that mechanistic models such as the Susceptible-Infected-Recovered (SIR) and its variants proved to be more useful for COVID-19 forecasting. However, due to deaths being a lagging indicator of disease activity, it proved difficult to use for guiding policy interventions in real-time. Subsequently this effort was expanded in July 2020 to include incident case forecasts at the county level. 
+
+Forecasting disease incidence at finer spatial resolution is impacted by multiple factors such as: (a) higher noise partly due to lower population counts, (b) lack of exogenous observables such as mobility or testing rates at equivalent resolution, and (c) greater level of connectivity across regions leading to interdependence. Further, the COVID-19 experience across the United States has been quite heterogeneous spatially and temporally, making it difficult to obtain sufficient training data and reasonably track the different phases of the pandemic. Other aspects such as reporting errors, back-filled cases may lead to uncharacteristic spikes not necessarily reflecting the state of the pandemic. Finally, for geographically and demographically heterogeneous states like California and Virginia, it is difficult to \emph{understand} the state level epidemic trajectories without considering the evolution at finer resolution, such as the county level. Thus, beyond aiding targeted interventions and resource demand estimation, forecasting at the county level for United States can help improve the overall forecasting quality and robustness at the state and national level. It is to be noted that of the nearly 70 teams contributing to \hub{}, only 20\% of them produce county level forecasts, many of them starting in late 2020. Further, not every team provides probabilistic forecasts due to the aforementioned challenges complicating uncertainty quantification. Since it is well accepted that ensemble forecasts tend to have better performance compared to individual forecasts \cite{viboud2018rapidd, reich2019collaborative, yamana2016superensemble}, \hub{} employs a non-performance-based ensemble approach to combine the probabilistic forecasts from multiple teams provided in the form of quantiles. Each quantile of the ensemble forecast is constructed by taking the median of the forecasts across the models for the corresponding quantile.
+
+\begin{figure*}[t!]
+    \centering
+    \subfigure[]{\includegraphics[width=.70\linewidth]{figs/flowchart.png}}
+    \\
+    \subfigure[]{\includegraphics[width=.3\linewidth]{figs/Cook_v3.pdf}}
+    \subfigure[]{\includegraphics[width=.3\linewidth]{figs/District of Columbia_v3.pdf}}
+    \subfigure[]{\includegraphics[width=.3\linewidth]{figs/Los Angeles_v3.pdf}}
+    \caption{Forecasting pipeline. (a) The weekly work flow, (b) Example forecasts for few counties with high case counts. Gray vertical lines indicate date of forecast (date of last observed data) and dashed lines to its right are the corresponding forecasts produced by the methods.}
+    \label{fig:flowchart}
+\end{figure*}
+
+Thus we note that there is a need for a comprehensive forecasting framework that combines multiple individual methods from various modeling paradigms within a performance-based ensemble. Instead of combining multiple contributed models, developing a single framework allows the models to share common datasets, runtime environments and improves overall robustness of the system. In our approach, we consider a combination of statistical, machine learning and mechanistic approaches, with a performance based ensembler to combine the models. Specifically, we use a variety of autoregressive methods (AR and ARIMA) \cite{prashant2019PLOSCompBio} with exogenous variables, an Long Short-Term Memory (LSTM) model \cite{hochreiter1997long}, nonlinear ensemble Kalman Filter (EnKF) \cite{yang2014comparison}, and compartmental SEIR model at the county level, and employ Bayesian Model Averaging (BMA) \cite{hoeting1999bayesian} to aggregate the individual forecasts. Further, since BMA computes the weighted average of probabilistic forecasts based on recent past performance, it allows us to provide robust forecasts while leveraging the best performing individual methods for different spatial regions and time points. Our approach is unique in the variety of methods incorporated for this task, and the only trained ensemble to the best of our knowledge for forecasting the COVID-19 pandemic in the United States. 
+
+Our key contributions and findings are as follows:
+
+\begin{itemize}
+\item We demonstrate the utility of a diverse, multi-model, performance based ensemble within a forecasting pipeline which can be quickly re-purposed for other pandemics and emerging outbreaks. Owing to the non-stationarity of the data, the individual methods and the BMA ensemble have to be trained periodically to keep pace with available disease surveillance. We thus describe a forecasting pipeline which has been operational for nearly 6 months, updated weekly at county level resolution.
+    
+\item We highlight the challenges in building such an ensemble, and show how it leverages individual models at different time points and geographical regions. Through ablation analyses we show that at individual county level, some methods may be highly preferred, and contribute significantly to the ensemble. We compare the performance of our approach with our publicly available contributed models and \hub{}'s unweighted ensemble using probabilistic scoring functions, and show that our model is ranked among the top three and increasingly preferred for longer forecast horizons. 
+    
+\item The framework we have described, in addition to being part of \hub{}'s ensemble, also provides additional 1-2 weeks of synthetic data (i.e., forecast) for the mechanistic models to train on and produce more realistic projections  for policy makers. One such model is publicly deployed on the Virginia Department of Health COVID-19 Data Insights portal\footnote{\url{https://www.vdh.virginia.gov/coronavirus/covid-19-data-insights/}}. 
+\end{itemize}
+
+\subsection{Related Work}
+As discussed previously, most of the COVID-19 forecasting approaches have involved mechanistic models \cite{anastassopoulou2020data,chinazzi2020effect}, including multiple variants that are part of \hub{}. Traditionally, statistical and other data-driven methods have shown to be effective in epidemic forecasting but also rely heavily on high-quality data. Autoregressive (AR) models have been employed extensively in forecasting epidemics such as ILI and Dengue \cite{yang2015accurate,paul2014twitter,wang2015dynamic, prashant2019PLOSCompBio, soebiyanto2010modeling} and have yielded quality forecasts with the incorporation of exogenous variables such as social media and syndromic surveillance data sources. For COVID-19, linear models have been largely restricted to forecasting case time series at the national level and typically employ time series data from multiple regions to better model the data \cite{ARhernandez2020forecasting, ARceylan2020estimation, ARkufel2020arima}. Modelers have also considered more complex systems such as deep-learning models. Specifically, Long Short-Term Memory (LSTM) networks owing to their ability to capture long-distance dependencies in a time series have been employed in ILI forecasting \cite{volkova2017forecasting, venna2019novel,wang2019defsi} with the inclusion of auxiliary data such as weather and geographical proximity casual model simulations. Another, model has been Graph Neural Networks which provide a natural framework to capture spatio-temporal interdependencies in epidemics dynamics \cite{wu2018deep,deng2020cola}. Some early examples of such models include \cite{ramchandani2020deepcovidnet} and \cite{rodriguez2020deepcovid} which incorporated auxiliary data and has been one of the long-standing national and state-level models in the \hub{}. With the progression of the pandemic multiple papers have emerged~\cite{kapoor2020examining,fritz2021combining} that incorporate mobility data into GNNs to better model interventions. Recently, Gao et al.~\cite{gao2020stan} proposed an attention-based GNN to integrate causal theory equations to regularize predictions. Finally, Bayesian model averagin (BMA) is a well-studied, effective framework for model averaging that, unlike the model selection, also takes into account the uncertainty in predictions. Its application to combining multiple weather models has been studied exhaustively by Raftery \emph{et al} \cite{raftery2005using,raftery2003discussion}, while its effectiveness in weighting competing ILI models has been demonstrated in \cite{yamana2017individual,yamana2016superensemble}. 
+
+\section{Forecasting Models and Ensemble}
+\label{sec:models}
+Consider the COVID-19 confirmed cases time series $\{y_{c,t}\}_{t=1}^{T}$ corresponding to a county $c$ until $T$. The forecasting problem involves predicting forward $S-$steps ahead $\{\hat{y}_{c,t}\}_{t=T+1}^{T+S}$ and we attempt to predict it by employing a variety of methods and then combining their forecasts. In the context of \hub{}, we generate short-term forecasts of 1 to 4 week ahead, at weekly resolution. Since we are dealing with real-time systems and highly non-stationary data, the individual models as well as the ensemble model need to be retrained every week. As mentioned previously, each method consumes data in a different format and trains in slightly different ways. In this section, we briefly describe the individual models, associated data preparation and their training procedures. 
+
+\subsection{Auto Regressive Models}
+This class of linear methods model the signal to be forecast using its lagged versions. We also incorporate the lagged time series data of other counties from that state to capture the spatial-temporal correlation between counties within a state. Since the time series under consideration is typically non-stationary, we log-transform it (to nullify the large variations in variance across time) and train the model every week over short segments with the assumption that the signal is relatively stationary over that period. The forecast model for county $i$ is given by
+\begin{equation}
+    \hat{y}_{i,t+s} = \sum_{j=0}^{C}\sum_{p=0}^{P} a^{(s)}_{p,t} y_{j,t-p}  \quad i=1, 2, 3, \&~ 4 
+    \label{eq:ARLR_model}
+\end{equation}
+where $P$ is the length of the training window. A sparse set of $a^{(s)}_{p,t}$ is estimated using an efficient bi-directional step-wise regression variable selection procedure \cite{prashant2019PLOSCompBio, hocking1976biometrics}, a method that has proved effective in ILI and Dengue forecasting. Note that $a^{(s)}_{k,t}$ is time-varying and the model in \eqref{eq:ARLR_model} does not use rolling forecasts, that is, $\hat{y}_{i,t+s}$ is not incorporated in the forecast for ${y}_{i,t+s+1}$. This ensures that large errors do not propagate through the model (a trade-off as accurate forecasts are dropped). In the ensemble, we use two versions of this framework, the vanilla AR with only $i=j$ and is denoted AR, while AR\_spatial includes time series from other counties. After much experimentation, we set $P=7$ for \emph{AR} and \emph{AR\_spatial} with a training window of 8 weeks for both methods. The uncertainty in the forecasts were obtained by perturbing the coefficients by the training RMSE and run for multiple iterations to obtain the forecast distribution. Although we have experimented with other exogenous regressors such as aggregate mobility data, hospital visits, etc., they are not part of the current framework. The more general non-seasonal Autoregressive Integrated Moving Average (ARIMA) are effective for modeling signals with some degree of non-stationarity (trends), by specifying three parameters: autoregressive lag parameter $p$, the order of differencing $d$, and the order of the moving average filter $q$. We employ the popular \verb|forecast| package \cite{Hyndman2020forecast} in order to determine the parameters. A separate model for each county is trained for each week and a training window of 10 weeks is considered. A range of parameters $p[0,3]$, $d[0,2]$, $q[0,3]$ was prespecified for the package to sweep through and the optimality of the model was determined using the Bayesian Information Criterion.   
+
+\subsection{Long Short-Term Memory (LSTM) Networks}
+This method uses Long Short-Term Memory (LSTM)~\cite{hochreiter1997long, wang2020examining} networks to capture the temporal dynamics of COVID-19 time series. Given the region's time series $\mathbf{X}_{t}=[\mathbf{x}_{t-T+1},...,\mathbf{x}_{t}]$, an LSTM model consists of k-stacked LSTM layers and each LSTM layer consists of $T$ cells corresponding to $T$ time points. The output of the last cell at the $k$th LSTM layer is fed into a fully connected layer to make the final prediction. Deep learning models usually require a large amount of training data which is not available in the context of COVID-19. Particularly, for counties of small population size where the surveillance data is sparse and noisy. Thus training a single model for each such region is highly susceptible to overfitting. In this respect, we explored a clustering-based approach that simultaneously learns COVID-19 dynamics from multiple regions within the cluster and infers a model per cluster. For the instance described in this framework, we grouped counties by their state, and trained one LSTM model per state. Other clutersing methods including k-means \cite{hartigan1979algorithm}, time series k-means (tskmeans) \cite{huang2016time} and k-shape \cite{paparrizos2015k} were also investigated but provide no significant improvement over geo-clustering method. 
+The model was implemented as one LSTM layer with hidden size 32, one dense layer with hidden size 16 and a rectified linear unit (ReLU)~\cite{nair2010rectified} activation function, and one dropout layer with a dropout rate of 0.2. The output layer is a dense layer with linear activation and L2 kernel regularization with a 0.01 penalty factor. The historical window size is 3 weeks. We use the mean squared error (MSE) loss function and train the model with the Adam optimizer by setting a batch size of 32 and an epoch number of 200 using early stopping with a patience 50 for training. Probabilistic forecasts are generated using MCDropout~\cite{gal2016dropout}.
+
+\subsection{Ensemble Kalman Filter}
+Ensemble Kalman Filter (EnKF)~\cite{burgers1998analysis} is an approximate form of the Kalman filter that is particularly suited for practical applications. It represents the distribution of the state with sample mean and covariance which makes the filter updates computational less expensive compared to the update steps of the Kalman filter, and instead of a single model it takes an ensemble of model states that are propagated in parallel~\cite{YANG2020563}. This is suited for nonlinear problems and large models since the ensemble covariance replaces the actual error covariance matrix and avoids large computations. The ensemble mean is the best estimate for the actual state and the uncertainty of the forecast can be computed using the state covariance.  The implementation of the Ensemble Kalman Filter~\cite{rlabbe, filterpy} involves three steps - initialization, prediction, and update. The ensemble members are randomly sampled around the estimate, and perturbations are added at each update and predict step. For model selection, we tried four different models using weekly and daily versions of incident and cumulative case series. The daily incident version was smoothed with a 7-day moving average to remove within week variations.  Evaluation was done using median absolute percent error (APE) for counties with more than 10 cases. The model with weekly cumulative case counts performed consistently well across different forecast duration. Using this model, we varied the number of samples from 5 to 2500 over forecasts generated retrospectively for a 25-week time period, with higher $N$ leading to better performance at increasing computational costs. Based on the observed performance-speed trade-off, we set $N=100$. 
+
+\subsection{Compartmental SEIR Model}
+This method uses an Susceptible-Exposed-Infectious-Recovered (SEIR) model with outcome processing for case confirmation, hospitalization, and death, generated at a county-level resolution. While earlier variants of the model used inter-county travel and mixing (similar to \cite{venkatramanan2019optimizing}), due to time-varying social distancing and variable prevalence/incidence across counties, training a network model becomes difficult for an increasingly unsynchronized epidemic. Hence, in the model included in the ensemble, we train each county in isolation, where effects of social distancing and miscellaneous \emph{adaptations} are captured as temporal variations in the SEIR model's transmissibility term $\beta$. Using a simulation optimization approach, we sequentially estimate $\beta(t)$ with appropriate delays and scaling applied from simulated infections to confirmed cases. For each $t$, the estimation is done using Golden Section Search (GSS), a maximally efficient extremum search method within a specified interval~\cite{kiefer1953sequential}. Each county's confirmed cases is fit precisely through a daily varying transmissibility, and a smoothed version of recent $\beta(t)$ is used for projections/forecasting. For this analysis we used the mean $\beta(t)$ of recent 14 days, with the previous 21 days used for outlier removal (defined as a $\beta(t)$ outside the $3\sigma$ range) . We also perform 1-week ahead linear interpolation to smooth transitions for rapidly changing trajectories. While this method allows for layering counterfactual projections (i.e., increase or decrease in future $\beta$), we used the \emph{status-quo} projection for the ensemble. Widespread pandemic eliminates sensitivity to initial conditions, hence we assumed steady low-level of importation/external seeding (~1 case per 10 million). Other varied parameters include: duration of incubation (5-9 days) and infectiousness (2-7 days), case ascertainment rate (1x to 12x, depending on published seroprevalence testing), and delay from exposure to confirmation (4-12 days). The projected $\beta$'s for each cell in the experiment design are further randomized with 5 samples taken from the uniform distribution $[0.8\beta, 1.1\beta]$. 
+
+\subsection{Bayesian Model Averaging Ensemble}
+Since there is considerable variation in the case counts across counties, unlike \cite{raftery2005using,yamana2017individual} we independently train a single BMA model per county. Considering $K$ methods per county $M_1, M_2, \cdots, M_k$, we assume that the forecasts have a Normal distribution $\mathcal{N}(f_k,\tilde{\sigma}^2_k)$. The BMA model assumes that the forecast $y$ (note that we drop county $c$ subscript as each county is trained independently) given the mean of the individual forecasts has a probability density
+\begin{equation}
+    p(y| f_1, f_2, \cdots, f_K) = \sum_{k=1}^{K} w_k g_k (y|f_k,\sigma_k),
+    \label{eq:bma_pdf}
+\end{equation}
+where $w_k$ is the posterior probability of the $k^{\text{th}}$ method's forecast being the best one and is determined using $\tau$ training samples. \eqref{eq:bma_pdf} is a mixture of Gaussians and we proceed to determine the weights $w_k$ and $\sigma_k$. It is to be noted that despite each method providing its own uncertainty, we optimize further to refine it to obtain $\sigma_k$. Given the distribution \eqref{eq:bma_pdf}, the weights and variance parameters are obtained as the maximum likelihood estimate. The resulting log-likelihood function does not have an analytical solution, so we employ the standard expectation-maximization (EM) algorithm \cite{bilmes1998gentle}. The optimization procedure is iterative and alternates between the E-step and the M-step with the updates for $w_k$ and $\sigma_k$ in the $j^{\text{th}}$ iteration given by
+\begin{align}
+    \quad z^{(j)}_{k,t} &= \frac{w^{(j-1)}_kg({y_t|f_{k,t}, \sigma_k^{(j-1)}})}{\sum_{i=1}^K w^{(j-1)}_kg(y_t|f_{i,t}, \sigma_i^{(j-1)})} \quad (\text{E-step}) \nonumber\\ \intertext{and}
+    \quad w^{(j)}_k &= \frac{1}{\tau} \sum_{t=1}^\tau z_{k,t}^{(j)}\nonumber \\
+    &\sigma^{(j)2}_k = \frac{\sum_{t}z_{k,t}(y_t-f_{k,t})^2}{\sum_{t}z_{k,t}  } \quad (\text{M-step})
+    \label{eq:bma_fixed}
+\end{align}
+The EM steps typically converge to a local minima and the estimates are highly sensitive to initialization for which we consider $\sigma^{(0)}_k=\tilde{\sigma}_k$ as a possible initial value. 
+
+\section{The Pipeline}
+An overview of the forecasting pipeline is provided in Figure~\ref{fig:flowchart}. As indicated, the individual models and the ensemble are updated weekly, using data until Saturday of the previous week. In order to align with the other models that are part of \hub{}, we use confirmed cases at county level from the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE)\cite{dong2020interactive} dashboard. Data updates are around 4AM EST, and each model consumes the 7-day smoothed version of confirmed cases data which are then preprocessed as described in Section~\ref{sec:models}.  The \ar, \sar, LSTM and SEIR exploit parallelization and are run on multiple nodes of University of Virginia's HPC cluster. ARIMA and EnKF are run on independent work stations. Simultaneously, the weights for BMA are also computed using the stored forecasts from previous weeks and the updated disease surveillance. Once the individual model runs are completed, the probabilistic forecasts for $1-$ to $4-$ week ahead are computed and formatted according to the guidelines. The forecasts are then checked to ensure that the forecast date and target dates are in agreement. We also verify if the forecast values for the individual models are below the county population. In the event it is over the population value the model forecasts for the particular location are disqualified and the model is rerun after inspection. If the individual model reruns are not complete by Sunday 8PM (ET), the model's forecast is not incorporated into the week's forecast and the BMA for that county is rerun with the respective method removed. Once the set of methods get approved, the forecasts are combined with the BMA weights to create probabilistic forecasts which are converted to quantiles and submitted to the GitHub repository of \hub{} \footnote{\url{https://github.com/reichlab/covid19-forecast-hub}}. 
+
+In addition to being included in the \hub{} ensemble, the BMA forecast is used to provide additional training data for the compartmental SEIR model. The SEIR model is useful for capturing potential future interventions and vaccination scenarios, and hence will benefit from a forecast that captures the statistical trends from individual models. 
+
+\section{Results}
+\subsection{Forecasts and weights distribution}
+% \begin{figure}[ht!]
+% \centering
+%      \subfigure[]{\includegraphics[width=0.23\textwidth]{figs/District of Columbia_v3.pdf}
+%     \label{fig:DC}
+% }
+% \subfigure[]{\includegraphics[width=0.23\textwidth]{figs/New York_v3.pdf}
+%     \label{fig:NY}
+% }
+% \subfigure[]{\includegraphics[width=0.23\textwidth]{figs/Miami-Dade_v3.pdf}
+%     \label{fig:Miami}
+% }
+% \subfigure[]{\includegraphics[width=0.23\textwidth]{figs/Cook_v3.pdf}
+% \label{fig:Cook}
+% }
+% \\
+% \subfigure[]{\includegraphics[width=0.23\textwidth]{figs/Fulton_v3.pdf}
+% \label{fig:Fulton}
+% }
+% \subfigure[]{\includegraphics[width=0.23\textwidth]{figs/Los Angeles_v3.pdf}
+%     \label{fig:LosAngeles}
+% }
+%         \caption{Forecasts produced by the individual methods and the BMA for a few select forecast weeks. The data points between two vertical lines indicate the 1, 2, 3, and 4-week ahead forecasts by various methods and the left vertical line marks the week upto which the data is available for the models. The shaded area indicates 95\% confidence interval for the BMA forecasts. }
+%         \label{fig:top_county_forecasts}
+% \end{figure}
+
+ In an attempt to understand the spatio-temporal pattern of the dominant methods (the method with the highest weight) we present choropleth maps of US counties Figure~\ref{fig:choro} where each county's color indicates the method with the highest weight for that particular week. In August 2020, we observe a nearly uniform distribution of weights. In November 2020, ARIMA appears to be dominating while in December 2020 the SEIR model is the dominant one. Figure~\ref{fig:heatmap} provides an insight into the number of counties a method is chosen for a particular week. Heat map suggests that ARIMA gets picked by many counties consistently while methods like EnKF dominate initially but in the later months LSTM starts to get higher weights for a lot more counties. Visual inspection indicates that each method dominates different regions at different times suggesting no spatial or temporal preferences for any particular method. We next provide a quantitative evaluation of the ensemble and its constituent methods using standard metrics. 
+\begin{figure}
+    \centering
+    % \subfigure[]{\includegraphics[width=.3\linewidth]{figs/viz-08-16.png}\label{fig:chor08}}
+    % \subfigure[]{\includegraphics[width=.3\linewidth]{figs/ch-11-08.png}\label{fig:chor11}}
+    % \subfigure[]{\includegraphics[width=.3\linewidth]{figs/ch-12-13.png}\label{fig:chor12}}
+    \subfigure[]{\includegraphics[width=1\linewidth]{figs/choro_v4.pdf}\label{fig:choro}}
+    \\
+    \subfigure[]{\includegraphics[width=.8\linewidth]{figs/method_wins_heatmap_v4.pdf}\label{fig:heatmap}}
+    \caption{Weights distribution: (a) Spatial distribution of methods with the highest weights for a county across three different forecast weeks. (b) A heatmap depicting the temporal evolution of the dominant methods across forecast weeks.}
+    \label{fig:weight_dist}
+\end{figure}
+\subsection{A Comparison of Individual Methods}
+We evaluate 22 weeks of forecast data starting from the first week of August 2020 to the second week of January 2021 for all 3142 counties. The performance across 1-, 2-, 3-, and 4-week ahead targets (horizon) are evaluated separately. It is to be noted that since the county-level incident cases are typically small values. In all the evaluation, we consider only counties with observed forecast values greater than 10 cumulative cases. We employ mean absolute error (MAE) for comparing a set of $N$ point forecasts $\{\hat{y}_i\}_{i=0}^{N-1}$ with the observed values $\{y\}_{i=0}^{N-1}$: $\text{MAE}=\sum_{i=0}^{N-1}\frac{|\hat{y}_i-y_i|}{N}$.
+
+First, we consider the overall performance of each method by computing the MAE across all the forecast weeks and counties. The results are shown in Figure~\ref{fig:avg_BMA} and indicate that the average performance of individual models are similar. Also, the performance of BMA ensemble is comparable to, if not better than, the best performing model which is in accordance with previous observations made by \cite{yamana2016superensemble, hoeting1999bayesian}. The average performance of the methods across all counties for each forecast week is shown plot Figure~\ref{fig:avg_week_BMA}. In comparison to most methods the BMA has lower variations. 
+% and is computed as $\sum_{c=0}^{C}\frac{|\hat{y}_{c,t}-y_{c,t}|}{CT}$ for $T$ weeks and $C$ counties.
+% \begin{figure*}[t!]
+%     \centering
+%     \includegraphics[width=1\textwidth]{figs/viz_heatmap.pdf}
+%     \caption{Models with highest weighting in the ensemble (a) Geographic distribution of highest weighted model across three different time periods, illustrating the performance of each model varies as the pandemic enters different phases of growth and decline across the nation. (b) Average weighting across all counties for each model over time for 1-week and 2-week ahead targets}
+%     \label{fig:my_label}
+% \end{figure*}
+
+
+
+
+\begin{figure}
+    \centering
+    \subfigure[]{
+    \includegraphics[width=.98\linewidth]{figs/overall_perf_BMA_v3.pdf}
+    
+    \label{fig:avg_BMA}}
+    \subfigure[]{\includegraphics[width=.95\linewidth]{figs/median_bma_methods_1_week_ahead.pdf}
+    \label{fig:avg_week_BMA}}
+    \caption{The overall performance of individual methods and the BMA ensemble. (a) The overall performance is the MAE computed across all counties and forecast dates. The results indicate that average performance of BMA is comparable to method with the least MAE. (b) Performance of BMA and the individual models across various forecast weeks since August 2020. The performance of individual models vary across weeks and while the BMA shows relatively less variations across weeks.}
+\end{figure}
+ 
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.95\linewidth]{figs/mean_bma_methods_week_perf_v3.pdf}
+%     \caption{Performance of BMA and the individual models across various forecast weeks since the August 2020. The performance of individual models vary across weeks the weeks and the BMA attempts to average out the performance.}
+%     \label{fig:rank_week_res}
+% \end{figure}
+% \begin{figure}
+%      \centering
+%      \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figs/1 wk ahead inc case-MAPE_perf_weekly.pdf}
+%          \caption{1-week ahead}
+%          \label{fig:y equals x}
+%      \end{subfigure}
+%      \hfill
+%      \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figs/2 wk ahead inc case-MAPE_perf_weekly.pdf}
+%          \caption{2-week ahead}
+%          \label{fig:three sin x}
+%      \end{subfigure}
+%      \hfill
+%      \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figs/3 wk ahead inc case-MAPE_perf_weekly.pdf}
+%          \caption{3-week ahead}
+%          \label{fig:five over x}
+%      \end{subfigure}
+%         \caption{Three simple graphs}
+%         \label{fig:three graphs}
+%     \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figs/4 wk ahead inc case-MAPE_perf_weekly.pdf}
+%          \caption{4-week ahead}
+%          \label{fig:five over x}
+%      \end{subfigure}
+%         \caption{ (update and remove mobility related models) Performance evaluation of the individual methods and the ensemble methods across multiple weeks of 2020 for different targets. The MAPE is computed across all counties for the particular forecast week . It is observed that the nonlinear methods such as ENKF and LSTM have consistent performance across the weeks.}
+%         \label{fig:method_comp_week}
+% \end{figure}
+\subsection{Relative Importance of Methods}
+To measure the relative importance of the models, we performed ablation analysis by omitting out forecast of a specific method in the ensemble. The ensemble is retrained and its performance is compared with the BMA trained using all models. In Figure~\ref{fig:ablation_overall} we show the results of the experiment. Although the drop in performance is significant it can be attributed to large errors incurred by making poor forecasts for counties with large number of cases. Further, this can be explained using Table~\ref{tab:bma_table} where we compute the change in MAE after the removal of a method. Let $\text{MAE}^{(K)}$ denote the MAE for the BMA with all $K$ models and let $\text{MAE}^{(K-1)}$ denote the MAE of the BMA with a specific method removed. The \% change in performance is computed as $\frac{\text{MAE}^{(K)}-\text{MAE}^{(K-1)}}{\text{MAE}^{(K)}}$.  
+\begin{figure}
+    \centering
+    \subfigure[]{\includegraphics[width=.95\linewidth]{figs/ablation_overall_v3.pdf}\label{fig:ablation_overall}}
+    \subfigure[]{\input{figs/ablation_table}\label{tab:bma_table}}
+    \caption{Ablation analysis to study the relative importance of individual methods that feed into the BMA ensemble. The MAE is computed across all counties and forecast weeks. (a) A comparison of forecast performances of $\text{BMA}^{(K)}$ with the other $K$ $\text{BMA}^{(K-1)}$ models. (b)  \% change in MAE for few county forecasts after dropping the most picked method (computed across forecast weeks) with respect to the MAE of BMA with all methods included. The number of times a method is picked is indicated next to it.}
+    
+\end{figure}
+  We picked some of the top COVID-19 hit counties and determined the best performing method across all weeks for that county. For Maricopa county, Arizona, SEIR model had the highest weights for eight weeks. When the SEIR model is dropped from the ensemble and the weights retrained, the relative change in performance is 1576.1\%. This large change indicates that the other methods were unable to substitute for the SEIR model. These large errors are quite possible for individual statistical methods.     
+% \begin{table}[ht]
+
+% \caption{Ablation analysis: The change in MAE after dropping the most picked method across forecast weeks with respect to the BMA with all methods included. The number of times a method is picked is indicated next to it. \% change in MAE indicates that dropping the most picked method results in a considerable degradation in performance. with all the methods incorporated vs BMA m and The results show that removing any method results in considerable drop in performance. This indicates that certain county BMA model relies heavily (dominant weights) on a particular method. Although, removing the particular method redistributes the weights among other methods, the resultant forecasts would be of inferior quality.}
+% \input{figs/ablation_table}
+% \label{tab:bma_table}
+% \end{table}
+\subsection{Comparison with \hub{} Models}
+Among the 70 modeling teams present in \hub{} only a handful of them provide county-level forecasts. In order to make a fair comparison, we only consider teams that have been providing consistent forecasts across most locations and targets since August 2020. The competing models are \emph{COVIDhub-ensemble},  \emph{JHU\_IDD-CovidSP}, \emph{LANL-GrowthRate}, and \emph{CU-select} (the names are as specified in their respective submission to ForecastHub). Our forecasts are submitted under the team name \emph{UVA\_ensemble}.   
+
+ JHU\_IDD-CovidSP and CU-select are both county-level SEIR models that employ mobility to adjust for the disease spread parameters. LANL-GrowthRate, on the other hand, is a susceptible-infected model and determines the evolution of number of infections using a statistical model and then maps the infections to confirmed case data. The \emph{COVIDhub-ensemble} uses ensembles forecasts from all eligible models (only models that produce all four week ahead forecasts) and takes the median prediction across all eligible models at each quantile. In order to make a comparison of probabilistic forecasts, we employ the interval score (IS) and its weighed version, an agreed upon metric in the community \cite{bracher2020evaluating}. IS is defined as
+\begin{equation}
+    IS_{\alpha}(F,y)=(u-l) + \frac{2}{\alpha} (l-y) \mathbbm{1}(y<l) + \frac{2}{\alpha} (y-u) \mathbbm{1}(y>u)
+    \label{ISscore}
+\end{equation}
+where $(1-\alpha)\times 100\%$ is the prediction interval characterized by the upper bound $u$ and the lower bound $l$ that is likely to contain the forecast value $y$, and $\mathbbm{1}$ is the indicator function. The first term in \eqref{ISscore} captures the spread while the second and the third term are penalties for under- and over-prediction, respectively. The IS is computed for various prediction intervals and their weighed combination yields the Weighted Interval Score (WIS):
+\begin{equation}
+    WIS_{\alpha_{0:k}} = \frac{1}{K+1} \sum_{k=0}^{K} \frac{\alpha_k}{2} IS_{\alpha_k}(F,y)
+\end{equation}
+
+We compute the WIS for each modeling team's forecasts and rank them accordingly for each target (horizon) and location. Rank 1 indicates the best performing team. In Figure~\ref{fig:overall_rank_all_res} we plot the number of locations across the weeks that a model is ranked 1. We observe that across targets the UVA-ensemble is one of the top three performing models. We disaggregate the data into the respective months and plot the data in Figure~\ref{fig:monthly_rank_all_res}. Mostly, COVIDHub-ensemble, CU-select, and UVA-ensemble are the top-performing models across most months but in December the performance of UVA-ensemble dropped. This drop in ranking could be due to multiple reasons; surges in cases and our model not being able to predict the trend; Model enhancements by other teams.
+
+\begin{figure}
+    \centering
+    \subfigure[]{\includegraphics[width=.98\linewidth]{figs/rank1_overall.pdf}\label{fig:overall_rank_all_res}}
+    \subfigure[]{\includegraphics[width=.98\linewidth]{figs/rank1_months.pdf}\label{fig:monthly_rank_all_res}}
+    \caption{Ranking of teams based on Mean WIS scores: (a) The plot indicates the number of locations across all weeks a given model was the best. (b) Performance of models across different months of 2020. The length of stacked bar indicates the total number of rank 1 assigned to a model while the individual stacks indicates the division for each target (horizon).}
+    \label{fig:rank_all_res}
+\end{figure}
+
+\section{Discussion}
+Infectious disease forecasting is a rapidly evolving discipline with significant scope for improvement across tools, techniques, platforms and policy-making. As can be seen from the COVID-19 experience that, while simpler models are easy to setup, it is difficult to keep them regularly updated to ever-changing surveillance caused by epidemiological and socio-behavioral processes. Further, providing high resolution forecasts (e.g., at county level) require considerable scaling up and optimization of individual models to be able to provide regular updates. Understanding how the different data streams and modeling techniques can be integrated in a timely yet reliable fashion remains an open challenge. Depending on the epidemic outcome being forecast (e.g., cases, hospitalizations, deaths), they can be used to guide interventional measures, supplement healthcare resources or shape public messaging. While existing frameworks such as \hub{} are quite successful in wrangling forecasts from multiple modeling teams for weekly updates to policymakers, our approach shows how a forecasting pipeline based on trained ensemble can still be beneficial under such dynamic conditions. While we have integrated methods from different modeling paradigm, given the available datasets and training approaches, an exhaustive search over the model space will still be challenging. Hierarchical model selection approaches along with ensembles that account for model complexity and diversity, will help produce more robust frameworks. Finally, using expert feedback as part of the loop, will help refine the objective functions by which the models are evaluated, thus providing more useful forecasts. 
+
+The codes related to the pipeline and an extended version of this paper containing more analysis can be accessed at \url{https://github.com/aniruddhadiga/covid-19_forecast}.
+
+\begin{acks}
+The authors would like to thank members of the Biocomplexity COVID-19 Response Team and the Network Systems Science and Advanced Computing (NSSAC) Division for their thoughtful comments and suggestions related to epidemic modeling and response support. We thank members of the Biocomplexity Institute and Initiative, University of Virginia, for useful discussion and suggestions. This work was partially supported by National Institutes of Health (NIH) Grant 1R01GM109718, NSF BIG DATA Grant IIS-1633028, NSF Grant No.: OAC-1916805, NSF Expeditions in Computing Grant CCF-1918656, CCF-1917819, NSF RAPID CNS-2028004, NSF RAPID OAC-2027541, US Centers for Disease Control and Prevention 75D30119C05935, University of Virginia Strategic Investment Fund award number SIF160, and Defense Threat Reduction Agency (DTRA) under Contract No. HDTRA1-19-D-0007.
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{refs}
+
+%%
+% %% If your work has an appendix, this is the place to put it.
+% \begin{appendices}
+
+% \end{appendices}
+
+\end{document}
+% \endinput
+%%
+%% End of file `sample-authordraft.tex'.
+% \paragraph{Interval score:} We employ the Interval score (IS):
+% \begin{equation}
+%     IS_{\alpha}(F,y)=(u-l) + \frac{2}{\alpha} (l-y) \mathbb{1}(y<l) + \frac{2}{\alpha} (y-u) \mathbb{1}(y>u)
+%     \label{ISscore}
+% \end{equation}
+% where $(1-\alpha)\times 100\%$ is the prediction interval characterized by the upper bound $u$ and the lower bound $l$ that is likely to contain the forecast value $y$. The first term in \eqref{ISscore} captures the spread while the second and the third term are penalties for under- and over-prediction, respectively. The IS is computed for a various prediction intervals and their weighed combination yields the Weighted Interval Score (WIS):
+% \begin{equation}
+%     WIS_{\alpha_{0:k}} = \frac{1}{K+1} \sum_{k=0}^{K} \frac{\alpha_k}{2} IS_{\alpha_k}(F,y)
+% \end{equation}
+
+% \subsection{Performance Evaluation of Individual Methods}
+% We first evaluate the performance of the individual methods that feed the ensemble. We employ MAE to determine the performance across the weeks of the pandemic. The COVIDHub started accepting county-level case incidence forecasting since the first week of August 2020 and in all our experiments we evaluate the performance of the methods from August 2020 to December 2020. 
+
+% In order to understand the consistency in performance of a model across the weeks, we compute the MAE across all the counties for a particular week, that is, if $\text{AE}_c(t)$ is the absolute error for a county $c$'s forecast for week $t$, then $\text{MAE}(t)=\sum_{c=1}^{C} \text{AE}_c(t)$. We compute the MAE for the four targets and results are presented in Figure~\ref{fig:method_comp_week}. We observe considerable variability in the performance of the statistical methods and PatchSim, particularly during July 2020 and August 2020. After the onset of the pandemic when there was considerable surge in the number of incident cases but during mid-April, May, and June the number of weekly new cases started to plateau. However, in July, we again started observing a surge in incident cases when the social distancing norms relaxed and the states went into final phase of reopening but in August 2020 we again observe the overall number of new cases drop. The statistical models which are trained on short time windows of 10 weeks had not observed the rising and falling trend and hence were unable to forecast accurately during the months of July and August. Since September 2020 the number of incident cases have been on the mainly increasing every week and the models have been observing only a single trend. LSTM and ENKF are able to better capture the trends in the time series and have consistent performance across the multiple weeks. The LSTM method is trained using short three-week length data and considering that a single model is used for all the counties in a state, one could assume that the model has observed considerable amount of variability in the training data and is able to better capture the different trends in the data. ENKF on the other hand is trained on the cumulative case counts which is always non decreasing and the updates which are the new cases are relative small (can it be approximates as a Gaussian?). More importantly, we observe that the performance of the ensemble model is relatively consistent across the weeks which suggests that the model is able to average out the effects of the poorly performing methods.
+
+% \section{Appendices}
+% \appendix
+% \section{Methods}
+% \subsection{Individual Methods}
+% \paragraph{AR}
+% \paragraph{ARIMA}
+% \paragraph{LSTM}
+% Assume a time sequence of a given region is represented as $\mathbf{X}_{t}=[\mathbf{x}_{t-T+1},...,\mathbf{x}_{t}] \in \mathbb{R}^{T \times S}$ where $T$ is the historical window size and $S$ is the feature number. An LSTM model consists of k-stacked LSTM layers. Each LSTM layer consists of $T$ cells, denoted as $\langle cell_{t-T+1},\cdots,cell_{t} \rangle$. The input is $\mathbf{X}_t$, the output from the last layer $k$ is denoted as $\mathbf{h}^{(k)}$. Let $H^{(i)}, 1 \leq i \leq k$ be the dimension of the hidden state in $layer_i$. For the first layer $layer_1$, $cell_t$ will work as:
+% \begin{equation}
+% \label{equ:lstmcell}
+% \begin{aligned}
+% &\mathbf{i}_{t}^{(1)} = \sigma(\mathbf{W}_i^{(1)} \cdot \mathbf{x}_{t} + \mathbf{U}_i^{(1)} \cdot \mathbf{h}_{t-1}^{(1)} + \mathbf{b}_i^{(1)}) \in \mathbb{R}^{H^{(1)}}\\
+% &\mathbf{f}_{t}^{(1)} = \sigma(\mathbf{W}_f^{(1)} \cdot \mathbf{x}_{t} + \mathbf{U}_f^{(1)} \cdot \mathbf{h}_{t-1}^{(1)} + \mathbf{b}_f^{(1)}) \in \mathbb{R}^{H^{(1)}}\\
+% &\mathbf{o}_{t}^{(1)} = \sigma(\mathbf{W}_o^{(1)} \cdot \mathbf{x}_{t} + \mathbf{U}_o^{(1)} \cdot \mathbf{h}_{t-1}^{(1)} + \mathbf{b}_o^{(1)}) \in \mathbb{R}^{H^{(1)}}\\
+% &\widetilde{\mathbf{C}}_{t}^{(1)} = \tanh(\mathbf{W}_C^{(1)} \cdot \mathbf{x}_{t} + \mathbf{U}_C^{(1)} \cdot \mathbf{h}_{t-1}^{(1)} + \mathbf{b}_C^{(1)}) \in \mathbb{R}^{H^{(1)}}\\
+% &\mathbf{C}_{t}^{(1)} = \mathbf{f}_{t}^{(1)} \circ \mathbf{C}_{t-1}^{(1)} + \mathbf{i}_{t}^{(1)} \circ \widetilde{\mathbf{C}}_{t}^{(1)} \in \mathbb{R}^{H^{(1)}}\\
+% &\mathbf{h}_{t}^{(1)} = \mathbf{o}_{t}^{(1)} \circ \mathbf{C}_{t}^{(1)} \in \mathbb{R}^{H^{(1)}}
+% \end{aligned}
+% \end{equation}
+% where $\sigma$ and $tanh$ are sigmoid and tanh activation functions. $\mathbf{W} \in \mathbb{R}^{H^{(1)}\times S}, \mathbf{U} \in \mathbb{R}^{H^{(1)} \times H^{(1)}}$, and $\mathbf{b} \in \mathbb{R}^{H^{(1)}}$ are learned weights and bias.
+% $\mathbf{C}_{t-1}^{(1)}, \mathbf{h}_{t-1}^{(1)}$ are the cell state and output of the previous cell. Operator $\circ$ denotes element wise product (Hadamard product). 
+
+% The output of the k-stacked LSTM layers is fed into a fully connected layer:
+% \begin{equation}
+% \label{equ:output}
+% \hat{\mathbf{z}}_{t+h} = \psi(\mathbf{w} \cdot \mathbf{h}_{t}^{(k)} + \mathbf{b}) \in \mathbb{R}^{H}
+% \end{equation}
+% where $H$ is the output dimension, $\mathbf{w} \in \mathbb{R}^{H \times H^{(k)}}$, $\mathbf{b} \in \mathbb{R}^{H}$, and $\psi$ is a linear function. The output layer makes the final prediction at time $t+h$.
+ 
+% \paragraph{ENKF}
+% \paragraph{PatchSim-Adaptive}
+% If your work needs an appendix, add it before the
+% ``\verb|\end{document}|'' command at the conclusion of your source
+% document.
+% \paragraph{BMA ensemble} Apart from the formulation presented in \eqref{eq:bma_fixed}, we also consider a formulation which assumes that across the training window $\tau$, the forecasts from individual models $\{f_{k,t}\}_{t=1}^{\tau}$ are stationary. We replace $f_{k,t}$ in \eqref{eq:e-step} with $\mu_k$ which represents the weighted average of the model $k$'s forecasts across the training window. This assumption leads to a different set of weights as opposed to the model in \eqref{eq:bma_fixed}. The individual parameters are updated are as follows: 
+% \begin{align}
+%     w^{(j)}_k &= \frac{1}{\tau} \sum_{t=1}^\tau z_{k,t}^{(j)}\nonumber \\
+%   \mu^{(j)}_k &= \frac{\sum_{t}z_{k,t}f_{k,t}}{\sum_{t}z_{k,t} }\nonumber \\
+%     \sigma^{2(j)}_k &= \frac{\sum_{t}z_{k,t}(y_t-\mu_{k}^{(j)})^2}{\sum_{t}z^{j}_{k,t}} \quad \text{M-step} \nonumber
+% \end{align}
+% where
+% \begin{align}
+%     z^{(j)}_{k,t} = \frac{w^{(j-1)}_kg({y_t|f_{k,t}, \sigma_k^{(j-1)}})}{\sum_{i=1}^K w^{(j-1)}_kg({y_t|f_{i,t}, \sigma_i^{(j-1)}})}. \quad \text{E-step} 
+%     \label{eq:bam_var}
+% \end{align}
+% In fact, the updates amount to the standard EM updates in GMM parameter estimates with both the individual mean and variance parameters unknown. Since we initialize with uniform weights $w_k$, $\mu^{(0)}_k=\frac{1}{\tau}\sum_{t=1}^{\tau} f_{kt}$.
+% We term the BMA formulation in \eqref{eq:bma_fixed} with individual mean components fixed as \emph{BMA-Fixed\_Mean} and the formulation in \eqref{eq:bam_var} \emph{BMA-Var\_Mean}. We compare the performance of the \emph{BMA-Fixed\_Mean} and \emph{BMA-Var\_Mean} and show the MAE computed across all the counties and forecast weeks in Figure~\ref{fig:bma_multi_forms}.  
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.95\linewidth]{figs/muliple_form_BMA.pdf}
+%     \caption{Performance comparison between BMA-Fixed\_Mean and BMA-Var\_Mean. The overall performance computed across all counties and forecast dates indicates that BMA-Fixed\_Mean performs consistently better than BMA-Var\_Mean. In all our experiments we consider BMA-Fixed\_mean technique for computation of weights.}
+%     \label{fig:bma_multi_forms}
+% \end{figure}
+% Start the appendix with the ``\verb|appendix|'' command:
+% \begin{verbatim}
+%   \appendix
+% \end{verbatim}
+% and note that in the appendix, sections are lettered, not
+% numbered. This document has two appendices, demonstrating the section
+% and subsection identification method.
+
+% \section{SIGCHI Extended Abstracts}
+
+% The ``\verb|sigchi-a|'' template style (available only in \LaTeX\ and
+% not in Word) produces a landscape-orientation formatted article, with
+% a wide left margin. Three environments are available for use with the
+% ``\verb|sigchi-a|'' template style, and produce formatted output in
+% the margin:
+% \begin{itemize}
+% \item {\verb|sidebar|}:  Place formatted text in the margin.
+% \item {\verb|marginfigure|}: Place a figure in the margin.
+% \item {\verb|margintable|}: Place a table in the margin.
+% \end{itemize}
+
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.95\linewidth]{figs/boxplot_overall_MAE_v3.pdf}
+%     \caption{The boxplot indicates the dispersion in MAE for each methods across forecast weeks and locations. We observe that median absolute error is similar across methods. }
+%     \label{fig:rank_all_res}
+% \end{figure}
+% \subsection{Metrics}
+% We employ multiple metrics in order to evaluate the point and the probabilistic forecasts. As for the point forecasts we employ: 
+% \paragraph{Absolute error (AE)}: Given a forecast $\hat{y}$ and the observed value $y$, the absolute error is defined as $|y-\hat{y}|$.
+% % \paragraph{Absolute percentage error (APE)}: It is defined as $\frac{|y-\hat{y}|}{y}\times 100$.
+% % The quality of a probabilistic forecast $F$ is typically quantified by the spread and location of the probability distribution which can be quantified using multiple metrics. 
+
+
+
+%%% EnKF details
+
+% % \textbf{Initialize step :}
+% When the filter is initialized, a large number of sigma points (N) are drawn from the initial state and covariance. Given a mean and covariance, information can be exactly encoded in a set of points, referred to as sigma points~\cite{enwiki:1000081872}, which has the same mean and covariance, if treated as elements of a discrete probability distribution.
+% % , has mean and covariance equal to the given mean and covariance.
+% % [https://en.wikipedia.org/wiki/Unscented_transform]
+% The EnKF keeps propagating the originally created sigma points; and we only compute mean and covariance as outputs for the filter.
+% % Here $N$ is the number of sigma points, $\chi$ is the set of sigma points.
+% % $$\boldsymbol\chi \sim \mathcal{N}(\mathbf{x}_0, \mathbf{P}_0)$$
+% % \textbf{Predict Step:}
+% At the Predict step, all of the sigma points are passed through a state transition function adding some noise distributed according to the noise matrix.
+% % $$
+% % \begin{aligned}
+% % \boldsymbol\chi = f(\boldsymbol\chi, \mathbf{u}) + v_Q \\
+% % \mathbf{x} = \frac{1}{N} \sum_1^N \boldsymbol\chi
+% % \end{aligned}
+% % $$
+% % \textbf{Update Step:}
+% In the Update step we pass the sigma points through the measurement function and compute the mean and covariance of the sigma points. Then we compute the Kalman gain from the covariance, and update the Kalman state by scaling the residual by the Kalman gain~\cite{enwiki:1002246541}, which is a relative weight given to the measurements and current state estimate.
+% % The Kalman gain~\cite{enwiki:1002246541} is the relative weight given to the measurements and current state estimate with more weight on the most recent measurements for high gain, and the filter following model predictions more closely for low gain.
+% % [[[https://en.wikipedia.org/wiki/Kalman_filter]]]
+
+% % $$
+% % \begin{aligned}
+% %     \boldsymbol\chi_h = h(\boldsymbol\chi, u)\quad;  \qquad
+% %     \mathbf{z}_{mean} = \frac{1}{N}\sum_1^N \boldsymbol\chi_h \\ \\
+% %     \mathbf{P}_{zz} = \frac{1}{N-1}\sum_1^N [\boldsymbol\chi_h - \mathbf{z}_{mean}][\boldsymbol\chi_h - \mathbf{z}_{mean}]^\mathsf{T} + \mathbf{R} \\
+% %     \mathbf{P}_{xz} = \frac{1}{N-1}\sum_1^N [\boldsymbol\chi - \mathbf{x}^-][\boldsymbol\chi_h - \mathbf{z}_{mean}]^\mathsf{T} \\
+% %     \mathbf{K} = \mathbf{P}_{xz} \mathbf{P}_{zz}^{-1}\quad;  \qquad
+% %     \boldsymbol\chi  = \boldsymbol\chi + \mathbf{K}[\mathbf{z} -\boldsymbol\chi_h + \mathbf{v}_R] \\ \\
+% %     \mathbf{x} = \frac{1}{N} \sum_1^N \boldsymbol\chi \quad;  \qquad
+% %     \mathbf{P} = \mathbf{P} - \mathbf{KP}_{zz}\mathbf{K}^\mathsf{T}
+% % \end{aligned}
+% % $$
+
+% %  \newline
+% % --- disc daily vs weekly - haivng more data vs having to predict more pts \newline
+
+% % We did a comprehensive analysis to choose the best EnKF model. The process of tuning the model is essentially divided into two parts. Since it is a data-driven model with no exogenous variables, the choice of the time series will have an influence on the model performance. To this regard, four possible time series are tried upon, with sigma points N $=$ 20. These include:
+% % % \begin{itemize}
