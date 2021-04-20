@@ -1,0 +1,76 @@
+#!/bin/bash
+speed=.1
+if [ $# != 1 ]; then
+rsize=1200;
+qsize=100;
+usr=`whoami`
+else 
+rsize=$1;
+qsize=100;
+usr=`whoami`
+fi
+
+while [ 1 ];
+do
+   rstatus=`squeue -u $usr -o "%t" -h | grep R | wc -l`
+   qstatus=`squeue -u $usr -o "%t" -h | grep PD | wc -l`
+
+   if [[ $rstatus -ge $rsize ]] || [[ $qstatus -ge $qsize ]]; then
+   echo -ne "\r\033[K|o            $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep .5;
+   echo -ne "\r\033[K\ o           $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K\  o          $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K\   o         $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K\    o        $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|     o       $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|      o      $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|       o     $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|        o    $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|         o   $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|          _  $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+   echo -ne "\r\033[K|          ^  $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep $speed;
+   echo -ne "\r\033[K|          _  $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+      sleep 1;
+   else
+      break;
+   fi
+done
+
+##    if [[ $rstatus -ge $rsize ]]; then
+##    echo -ne "\r\033[K |o            $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K \ o           $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |  o          $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |   o  |o     $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |    o |o     $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |     o|o     $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |     o\ o    $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |    o /  o   $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |   o  |   o  $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |  o   |    _ $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K | o    |o     $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep $speed;
+##    echo -ne "\r\033[K |o     |o     $rstatus running and $qstatus in queue." #Cap: $rsize running and $qsize queue. Waiting ...";
+##       sleep 1;
+##    else
+##       break;
+##    fi
